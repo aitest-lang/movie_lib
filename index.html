@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Media Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Media Library</h1>
+            <div class="theme-toggle">
+                <button id="themeToggle"><i class="fas fa-moon"></i></button>
+            </div>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for movies or TV shows...">
+            <button id="searchButton"><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="filters">
+            <div class="filter-group">
+                <label for="languageFilter">Language:</label>
+                <select id="languageFilter">
+                    <option value="all">All</option>
+                    <option value="English">English</option>
+                    <option value="Hindi">Hindi</option>
+                    <option value="Telugu">Telugu</option>
+                    <option value="Japanese">Japanese</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="typeFilter">Type:</label>
+                <select id="typeFilter">
+                    <option value="all">All</option>
+                    <option value="Movie">Movie</option>
+                    <option value="TV Series">TV Series</option>
+                    <option value="Anime">Anime</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="sortBy">Sort by:</label>
+                <select id="sortBy">
+                    <option value="title-asc">Title (A-Z)</option>
+                    <option value="title-desc">Title (Z-A)</option>
+                    <option value="year-asc">Year (Oldest)</option>
+                    <option value="year-desc">Year (Newest)</option>
+                    <option value="rating-asc">Rating (Low)</option>
+                    <option value="rating-desc">Rating (High)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="search-results" id="searchResults">
+            <h2>Search Results</h2>
+            <div class="results-grid" id="resultsGrid"></div>
+        </div>
+
+        <div class="library">
+            <div class="library-section">
+                <h2>Watched <span id="watchedCount">(0)</span></h2>
+                <div class="items-grid" id="watchedGrid"></div>
+            </div>
+            <div class="library-section">
+                <h2>Wishlist <span id="wishlistCount">(0)</span></h2>
+                <div class="items-grid" id="wishlistGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <script src="movies.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
